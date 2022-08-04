@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>ROS2 Temperature Humidity</title>
+  </head>
+  <body>
+    <h1>Temperature_Humidity and VideoStream</h1>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <div>
+      <iframe src="http://0.0.0.0:8000/video_feed" height="378" width="620" ></iframe>
+    <div>  
+    <div id="result" style="white-space:pre;"></div>
+    <script type="text/javascript">
+        setInterval
+        (
+            function()
+            {
+                $.get("/showText",
+                function (data)
+                {
+                    $("#result").html(data);
+                });
+            },1000
+        );
+    </script>
+    
+  </body>
+</html>
